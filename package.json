@@ -21,8 +21,6 @@
   "homepage": "https://github.com/Shworc/skills-write-javascript-actions#readme",
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "@vercel/ncc": "^0.45.0",
-    "request": "^2.88.2",
-    "request-promise": "^0.0.1"
+    "@vercel/ncc": "^0.45.0"
   }
 }

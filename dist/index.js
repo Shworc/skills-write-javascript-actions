@@ -28000,14 +28000,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4392:
-/***/ ((module) => {
-
-module.exports = eval("require")("request-promise");
-
-
-/***/ }),
-
 /***/ 2613:
 /***/ ((module) => {
 
@@ -28243,24 +28235,22 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
 /************************************************************************/
 var __webpack_exports__ = {};
 
-// EXTERNAL MODULE: ./node_modules/@vercel/ncc/dist/ncc/@@notfound.js?request-promise
-var _notfoundrequest_promise = __nccwpck_require__(4392);
 ;// CONCATENATED MODULE: ./src/joke.js
-
-
-const options = {
-  method: "GET",
-  uri: "https://icanhazdadjoke.com/",
-  headers: {
-    Accept: "application/json",
-    "User-Agent": "Writing JavaScript action GitHub Skills exercise.",
-  },
-  json: true,
-};
-
 async function getJoke() {
-  const res = await _notfoundrequest_promise(options);
-  return res.joke;
+  const response = await fetch("https://icanhazdadjoke.com/", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "User-Agent": "Writing JavaScript action GitHub Skills exercise.",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch joke: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data.joke;
 }
 
 /* harmony default export */ const src_joke = (getJoke);
