@@ -5,10 +5,6 @@ on:
  issue_comment:
    types: [created]
 
-runs:
-  using: 'node20' # or node24
-  main: 'dist/index.cjs'
-
 permissions:
  issues: write
  contents: read
