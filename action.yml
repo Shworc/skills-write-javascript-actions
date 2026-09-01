@@ -6,5 +6,5 @@ outputs:
     description: "The fetched joke text"
 
 runs:
-  using: node20
-  main: dist/index.cjs
+  using: 'node24' # or node20 / node24 depending on your runner preference
+  main: 'dist/index.js'
